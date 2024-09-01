@@ -4,40 +4,52 @@
 <head>
     <title>Notes App</title>
     <link href="/images/favicon.png" rel="icon">
+    <link href="/styles/styles.css" rel="stylesheet">
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link href="/styles/styles.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="header">
-        <div class="container">
-            <h1 class="header__title">Notes App</h1>
-            <h2 class="header__subtitle">Take notes and never forget</h2>
-        </div>
+    <!-- Navbar -->
+    <div class="navbar-fixed z-depth-1">
+        <nav class="yellow darken-2">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="/index.html" class="brand-logo black-text hide-on-med-and-down left">Notes App</a>
+                    <a href="/index.html" class="brand-logo black-text hide-on-med-and-up center">Notes App</a>
+                    <ul id="nav-mobile" class="right">
+                        <li><a href="/index.html" class="black-text"><i class="medium material-icons ">home</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-    <div class="actions">
-        <div class="actions__container actions__container--spaced">
-            <a href="/index.html">Home</a>
-            <span id="last-edited"></span>
+    <!-- Edit/Create section -->
+    <div class="container" id="editContainer">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card z-depth-3">
+                    <div class="card-content">
+                        <span class="card-title">Notes</span>
+                        <div class="input-field">
+                            <input id="noteTitle" type="text">
+                            <label for="noteTitle">Note title</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="note-body" class="materialize-textarea"></textarea>
+                            <label for="note-body">Note text</label>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <span id="last-edited"></span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <input id="note-title" class="title-input" placeholder="Note title">
-        <textarea id="note-body" class="body-input" placeholder="Enter note text"></textarea>
-        <button id="remove-note" class="button button--secondary">Remove note</button>
+        <button id="remove-note" class="btn waves-effect waves-light light-blue darken-3 mt-3">Remove note</button>
+        <a href="/index.html" class="btn waves-effect waves-light light-green darken-3 mt-3">Save</a>
     </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

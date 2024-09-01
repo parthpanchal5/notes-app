@@ -1,35 +1,67 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Notes App</title>
-        <link href="/images/favicon.png" rel="icon">
-        <link href="/styles/styles.css" rel="stylesheet">
-    </head>
-    <body>
-        <header class="header">
-            <div class="container">
-                <h1 class="header__title">Notes App</h1>
-                <h2 class="header__subtitle">Take notes and never forget</h2>
+
+<head>
+    <title>Notes App</title>
+    <link href="/images/favicon.png" rel="icon">
+    <link href="/styles/styles.css" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar-fixed z-depth-1">
+        <nav class="yellow darken-2">
+            <div class="nav-wrapper">
+                <div class="container">
+                    <a href="/index.html" class="brand-logo black-text hide-on-med-and-down left">Notes App</a>
+                    <a href="/index.html" class="brand-logo black-text hide-on-med-and-up center">Notes App</a>
+                    <ul id="nav-mobile" class="right">
+                        <li><a href="/index.html" class="black-text"><i class="medium material-icons ">home</i></a></li>
+                    </ul>
+                </div>
             </div>
-        </header>
-        <div class="actions">
-            <div class="actions__container">
-                <input id="search-text" type="text" class="input" placeholder="Filter notes">
-                <select id="filter-by" class="dropdown">
-                    <option value="byEdited">Sort by last edited</option>
-                    <option value="byCreated">Sort by recently created</option>
-                    <option value="alphabetical">Sort alphabetically</option>
-                </select>
+        </nav>
+    </div>
+    <!-- Filter Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-s12">
+                <div class="row" id="filterNoteContainer">
+                    <div class="input-field col s12 m6">
+                        <input id="search-text" type="text">
+                        <label for="search-text">Search Note</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <select id="filterNotes" class="dropdown">
+                            <option value="0">Sort by</option>
+                            <option value="byEdited">Last edited</option>
+                            <option value="byCreated">Recently Added</option>
+                            <option value="alphabetical">Alphabetically (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container">
-            <div id="notes"></div>
-            <button id="create-note" class="button">Create Note</button>
-        </div>    
-        <script src="/scripts/uuidv4.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
-        <script src="/scripts/notes-functions.js"></script>
-        <script src="/scripts/notes-app.js"></script>
-    </body>
+        <div>
+            <h5 class="left-align">Your Notes</h5>
+        </div>
+        <div id="notes"></div>
+        <div class="buttonContainer" style="margin-top: 25px;">
+            <button id="create-note" class="btn waves-effect waves-light light-blue darken-3">Create Note</button>
+        </div>
+    </div>
+    <script src="/scripts/uuidv4.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8= sha256-T+aPohYXbm0fRYDpJLr+zJ9RmYTswGsahAoIsNiMld4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
+    <script src="/scripts/notes-functions.js"></script>
+    <script src="/scripts/notes-app.js"></script>
+</body>
+
 </html>
